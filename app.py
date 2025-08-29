@@ -29,6 +29,10 @@ def is_digits(s: str) -> bool:
 def is_alpha(s: str) -> bool:
     return bool(re.fullmatch(r"[A-Za-z]+", s))
 
+@app.route("/", methods=["GET"])
+def index():
+    return {"message": "Server running. Use POST /bfhl"}, 200
+
 @app.route("/bfhl", methods=["POST"])
 def bfhl():
     try:
